@@ -1,0 +1,9 @@
+require 'spec_helper'
+
+describe "routable routes" do
+<% @routes.each do |route| %>
+  it "routes <%= request_method(route) %> <%= route.optimized_path %> to <%= route.defaults[:controller] %>#<%= route.defaults[:action] %>" do
+    expect(<%= request_method(route).downcase %>: '<%= route.optimized_path %>').to route_to(<%= route_to(route) %>)
+  end
+<% end %>
+end
