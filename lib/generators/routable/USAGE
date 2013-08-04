@@ -1,0 +1,5 @@
+Description:
+    Routable
+
+Example:
+    rails generate routable:install
